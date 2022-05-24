@@ -1,0 +1,475 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;400;700&family=Raleway:wght@400;700;900&display=swap');
+
+:root{
+    --font-family: 'Raleway', sans-serif;
+    --font-size:16px;
+    --accents:#f32853;
+    --hover:#f44066;
+    --white:#fff;
+    --headings:#484848;
+    --text:#666;
+    --grey:#aaaaaa;
+    --transition:.3s ease ;
+    --py:80px 0;
+    --pt:100px 0 0 0;
+
+}
+/* BASIC STYLE */
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+ul{
+    list-style: none;
+}
+body{
+    font-family: var(--font-family);
+    font-weight: 400;
+    font-size: var(--font-size);
+    line-height: 1.5;
+    color: var(--text);
+}
+h1,h2,h3,h4,h5,h6{
+    font-weight: 700;
+    color: var(--headings);
+}
+a:hover{
+    transition: var(--transition);
+}
+button{
+    border: none;
+    padding: 15px 30px;
+    background:var(--accents);
+    font-size: 1rem;
+    color: var(--white);
+    text-transform: uppercase;
+    font-weight: 700;
+    border-radius: 7px;
+    letter-spacing: 1px;
+    cursor: pointer;;
+}
+button:hover{
+    background:var(--hover);
+}
+h2{
+    font-size: 2.5rem;
+    line-height: 1.5;
+}
+.container{
+    width: 75%;
+    margin: auto;
+}
+/* HEADER */
+header{
+    background-image: linear-gradient(rgba(72,72,72,.8),rgba(72,72,72,.8)) , url(/images/banner.jpg);
+    background-position: center top;  /* Na ovaj nacin je uzet gornji deo slike   */
+    background-size: cover;
+    background-attachment: fixed; /* Na ovaj nacin se slika sa spustanjem menja ne ostaje fiksirana */
+    height: 100vh;
+}
+header a{
+    text-decoration: none;
+    text-transform: uppercase;
+
+}
+header nav{
+    display: flex;
+    justify-content: space-between;
+    padding: 70px 70px 0 70px;
+}
+nav .logo span{
+    font-weight: 700;
+}
+nav .logo{
+    font-size: 1.2rem;
+    color: var(--white);
+}
+.logo:hover{
+    color: var(--accents);
+}
+header ul li a{
+    color: var(--white);
+    opacity: 0.7;
+    font-size: 1.1rem;
+}
+header ul li a:hover{
+    color: var(--white);
+    opacity: 1; /* Kada se na ovaj nacin radi sa opasitijem mora se posle opasiti dodati u hover da je jedan ili sta vec drugo treba */
+}
+header ul{
+    display: flex;
+}
+header li{
+    margin-left: 50px;
+}
+header hgroup{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 85vh;
+    text-transform: uppercase;
+    text-align: center;
+}
+header hgroup h1{
+    color: var(--white);
+    font-size: 3rem;   
+}
+header hgroup p{
+    color: var(--grey);
+    font-size: 1.2rem;
+    line-height: 1.5;
+    padding: 50px 0;
+} 
+.hamburger{
+    display: none;
+    cursor: pointer;
+}
+.bar{
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    background: #fff;
+}
+/* INTRO */
+.intro{
+    width: 55%;
+    margin: auto;
+    padding: var(--py);
+    display: flex;
+    justify-content: space-between;
+}
+.intro article{
+    flex: 0 0 45%;
+}
+.intro h4{
+    text-align: left;
+}
+.intro h4,
+.gallery h4,
+.services h4,
+.cta h4{
+    text-transform: uppercase;
+    font-size: 1.3rem;
+    color: var(--grey);
+    font-weight: 400;
+    line-height: 1.5;
+}
+.intro p {
+    font-size: 1rem;
+    line-height: 1.6;
+}
+.intro p:first-child{
+    padding-bottom: 30px;
+}
+/* GALLERY */
+.gallery{
+    background: #f6f6f6 ;
+    padding:var(--py) ;
+}
+.gallery h2,h4{
+    text-align: center;
+}
+.gallery .container{
+    margin-top: 100px;
+    display: flex;
+    justify-content: space-between;
+}
+.gallery .container div img{
+    width: 100%;
+    display: block;
+}
+.gallery .container div{
+    flex: 0 0 48%;
+}
+.gallery .container div h3{
+    background: var(--white) ;
+    text-align: center;
+    padding: 40px 0 ;
+    font-size: 1.6rem;
+    text-transform: uppercase;
+    box-shadow: 0px 0px 2px var(--grey);
+}
+.buttons{
+    text-align: center;
+    margin-top: 60px;
+}
+.buttons button{
+    margin: 0 20px;
+}
+.buttons button:last-child{
+    background: var(--headings) ;
+}
+.buttons button:last-child:hover{
+    background: var(--text) ;
+}
+/* SERVICES */
+
+.services{
+    padding: var(--pt);
+    padding-bottom: 20px;
+}
+.services h4{
+    text-align: left;
+}
+.services article{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-top: 100px;
+}
+.services article .col{
+    display: flex;
+    flex: 0 0 48%;
+    align-items: center;
+    margin-bottom: 80px;
+    justify-content: space-between;
+}
+.services article .col .text{
+    flex: 0 0 67%;
+}
+.services article .col .image{
+    flex: 0 0 27%;
+}
+.services article .col img{
+    width: 100%;
+    border-radius: 50%;
+    border: 9px var(--grey) solid;
+    display: block;
+}
+.services article .col img:hover{
+  border: 9px var(--accents) solid;
+  transition: var(--transition);
+}
+/*Na ovaj nacin se menja redosled necega u flexu  */
+.services article .col:nth-child(even) .text{
+    order: 2;
+}
+.services article .col:nth-child(even) .image{
+    order: 1;
+}
+/*Na ovaj nacin se menja redosled necega u flexu  */
+.services article .col:nth-child(odd) .text{
+    text-align: right;
+}
+.services .text h3{
+    text-transform: uppercase;
+    font-size:1.2rem;
+}
+.services .text h5{
+    font-size:1rem;
+    color:var(--grey);
+    font-weight: 300;
+    padding-bottom: 10px;
+}
+.services .text p{
+    font-size: 1rem;
+}
+
+/* CTA (call to action) */
+
+.cta {
+    background-image: linear-gradient(rgba(72,72,72,.8),rgba(72,72,72,.8)) , url(/images/banner.jpg);
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+    padding: 100px 0;
+    text-align: center;
+}
+.cta h2{
+    color: var(--white);
+}
+
+.cta h4{
+    text-transform: uppercase;
+    font-size: 1.7rem;
+    color: var(--grey);
+    font-weight: 400;
+    padding: 30px 0;
+}
+
+/* FOOTER */
+
+footer{
+    background: #f6f6f6;
+    text-align: center;
+    padding: var(--py);
+}
+footer a{
+    font-size: 3rem;
+    color: var(--grey);
+    margin: 0 30px;
+}
+footer a:hover{
+    color: var(--headings);
+    transition: var(--transition);
+}
+footer ul{
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+}
+footer ul li{
+    border-right: 1px solid var(--grey);
+    padding: 0 20px;
+}
+footer ul li:last-child{
+    border-right: none;
+}
+footer ul li a{
+    font-size: 1rem;
+    color: var(--grey);
+    text-decoration: none;
+}
+footer ul li a{
+    color: var(--text);
+}
+/* responsive */
+
+@media(max-width:767px){
+    header nav{
+        padding: 20px auto;
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+    }
+    header li{
+        padding-top: 20px;
+        margin-left: 10px;
+    }
+    header ul li a{
+        color: var(--white);
+        opacity: 0.7;
+        font-size: 1.3rem;
+    }
+    header hgroup p{
+
+        font-size: 1.3rem;
+    
+    } 
+    button{
+        padding: 15px 30px;
+    }
+    .intro{
+        width: 90%;
+        flex-wrap: wrap;
+        text-align: center;
+    }
+    .intro article {
+        flex: 0 0 100%;
+    }
+    h2{
+        font-size: 2rem;
+    }
+    .intro h4,
+    .gallery h4,
+    .services h4,
+    .cta h4{
+        font-size: 1.5rem;
+    }
+    .container{
+        width: 90%;
+        margin: auto;
+    }
+    .gallery .container{
+        flex-wrap: wrap;
+    }
+    .gallery .container div{
+        flex: 0 0 100%;
+        margin-bottom: 30px;
+    }
+    .buttons button{
+        margin: 0 10px 10px 0;
+        padding: 10px 30px;
+    }
+    .services article .col{
+        flex: 0 0 100%;
+    }
+    footer a{
+        font-size: 3rem;
+        color: var(--grey);
+        margin: 20px;
+    }
+    footer ul{
+        flex-direction: column;
+    }
+    footer ul li{
+        padding: 10px;
+    }
+}
+
+@media(max-width:768px){
+    .hamburger{
+        display: block;
+    }
+
+    .hamburger.active .bar:nth-child(2){
+        opacity: 0;
+    }
+    .hamburger.active .bar:nth-child(1){
+        transform: translateY(8px) rotate(45deg);
+    }
+    .hamburger.active .bar:nth-child(3){
+        transform: translateY(-8px) rotate(-45deg);
+    }
+    ul{
+        position: fixed;
+        left: -100%;
+        top: 120px;
+        gap: 0;
+        flex-direction: column;
+        width: 100%;
+        text-align: center;
+        transition: 0.3s ease;
+    }
+    header li{
+        padding-top: 10px;
+        margin-left: 0px;
+    }
+    .navmenu.active{
+        left: 0;
+    }
+    .navmenu{
+        min-height: 120px;
+    }
+    .intro{
+        width: 70%;
+    }
+    .intro article h2{
+        line-height: 1;
+    }
+    .intro article h4{
+        line-height: 1;
+        text-align: center;
+        margin: 30px auto;
+    }
+    .intro{
+        flex-direction: column;
+        text-align: center;
+    }
+    .gallery .container div h3{
+        font-size: 1.2rem;
+    }
+    .services article .col{
+        flex: 0 0 100%;
+    }
+}
+@media(max-width:375px){
+    ul{ position: absolute;
+        left: -100%;
+        top: 140px;
+        gap: 0;
+        flex-direction: column;
+        width: 100%;
+        text-align: center;
+        transition: 0.3s ease;
+    }
+    .hamburger{
+        margin-top: 10px;
+    }
+    header ul li a{
+        font-size: 1.1rem;
+    }
+}
